@@ -1,6 +1,7 @@
 package cz.alisma.alej.text.sablona;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class Sablona {
@@ -18,12 +19,15 @@ public class Sablona {
         
         
         HashMap<String, String> nahrady = new HashMap<>();
-        System.out.println( provedNahradu (text, nahrady) );
+        System.out.println( provedNahrady (text, nahrady) );
         sc.close();
     }
 
-    public static String provedNahradu( String text, HashMap<String, String> nahrady ) {
-        // TODO Auto-generated method stub
+    public static String provedNahrady( String text, HashMap<String, String> nahrady ) {
+        for (Entry<String, String> nahrada: nahrady.entrySet()) {
+            String coHledam = "\\{\\{ " + nahrada.getKey() + " \\}\\}";
+            text = text.replaceAll( coHledam, nahrada.getValue() );
+        }
         return text;
     }
 
