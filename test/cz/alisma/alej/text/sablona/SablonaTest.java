@@ -10,14 +10,14 @@ public class SablonaTest {
 
     @Test
     public void leftAlignerTest() {
-        String sablona = "Od: Dodavatel elektøtiny\r\n" + "Pro: {{ zakaznik }}\r\n" + "Vìc: Úhrada za mìsíc {{ mesic }} {{ rok }}\r\n"
-                + " \r\n" + "Dobrı den,\r\n" + "  posíláme informace k zaplacení úhrady za další mìsíc.\r\n" + " \r\n" + "S pozdravem,\r\n"
-                + " loupeníci\r\n" + " \r\n" + "Variabilní symbol: {{ vs }}\r\n" + "Èástka: {{ castka }} Kè\r\n"
-                + "Uhraïte na úèet: 000-123456789/1234";
-        String vystup = "Od: Dodavatel elektøtiny\r\n" + "Pro: Ferda Mravenec\r\n" + "Vìc: Úhrada za mìsíc duben 2019\r\n" + " \r\n"
-                + "Dobrı den,\r\n" + "  posíláme informace k zaplacení úhrady za další mìsíc.\r\n" + " \r\n" + "S pozdravem,\r\n"
-                + " loupeníci\r\n" + " \r\n" + "Variabilní symbol: 9876\r\n" + "Èástka: 123 Kè\r\n"
-                + "Uhraïte na úèet: 000-123456789/1234";
+        String sablona = "Od: Dodavatel elektÅ™tiny\r\n" + "Pro: {{ zakaznik }}\r\n" + "VÄ›c: Ãšhrada za mÄ›sÃ­c {{ mesic }} {{ rok }}\r\n"
+                + " \r\n" + "DobrÃ½ den,\r\n" + "  posÃ­lÃ¡me informace k zaplacenÃ­ Ãºhrady za dalÅ¡Ã­ mÄ›sÃ­c.\r\n" + " \r\n" + "S pozdravem,\r\n"
+                + " loupeÅ¾nÃ­ci\r\n" + " \r\n" + "VariabilnÃ­ symbol: {{ vs }}\r\n" + "ÄŒÃ¡stka: {{ castka }} KÄ\r\n"
+                + "UhraÄte na ÃºÄet: 000-123456789/1234";
+        String vystup = "Od: Dodavatel elektÅ™tiny\r\n" + "Pro: Ferda Mravenec\r\n" + "VÄ›c: Ãšhrada za mÄ›sÃ­c duben 2019\r\n" + " \r\n"
+                + "DobrÃ½ den,\r\n" + "  posÃ­lÃ¡me informace k zaplacenÃ­ Ãºhrady za dalÅ¡Ã­ mÄ›sÃ­c.\r\n" + " \r\n" + "S pozdravem,\r\n"
+                + " loupeÅ¾nÃ­ci\r\n" + " \r\n" + "VariabilnÃ­ symbol: 9876\r\n" + "ÄŒÃ¡stka: 123 KÄ\r\n"
+                + "UhraÄte na ÃºÄet: 000-123456789/1234";
         HashMap<String, String> nahrady = new HashMap<>();
         nahrady.put( "zakaznik", "Ferda Mravenec" );
         nahrady.put( "mesic", "duben" );
