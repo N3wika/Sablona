@@ -8,6 +8,17 @@ public class Sablona {
 
     public static void main( String[] args ) {
 
+        HashMap<String, String> nahrady = new HashMap<>();
+
+        for ( String arg : args ) {
+            System.out.println( arg );
+            if ( arg.startsWith( "--var" ) ) {
+                String[] argumenty = arg.split( "=" );
+                nahrady.put( argumenty[1], argumenty[2] );
+            }
+        }
+        
+        System.out.println( "Zadej vstup :)" );
         Scanner sc = new Scanner( System.in );
 
         String text = "";
@@ -16,15 +27,13 @@ public class Sablona {
             text += sc.nextLine() + "\n";
         }
 
-        
-        
-        HashMap<String, String> nahrady = new HashMap<>();
-        System.out.println( provedNahrady (text, nahrady) );
+        System.out.println( provedNahrady( text, nahrady ) );
         sc.close();
     }
 
+
     public static String provedNahrady( String text, HashMap<String, String> nahrady ) {
-        for (Entry<String, String> nahrada: nahrady.entrySet()) {
+        for ( Entry<String, String> nahrada : nahrady.entrySet() ) {
             String coHledam = "\\{\\{ " + nahrada.getKey() + " \\}\\}";
             text = text.replaceAll( coHledam, nahrada.getValue() );
         }

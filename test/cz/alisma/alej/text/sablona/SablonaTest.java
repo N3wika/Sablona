@@ -24,7 +24,7 @@ public class SablonaTest {
         nahrady.put( "rok", "2019" );
         nahrady.put( "vs", "9876" );
         nahrady.put( "castka", "123" );
-        String result = Sablona.provedNahradu( sablona, nahrady );
+        String result = Sablona.provedNahrady( sablona, nahrady );
         assertEquals( "Je to rozbity", vystup, result );
     }
 
